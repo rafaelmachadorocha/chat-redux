@@ -1,7 +1,27 @@
+
+@import './channel_list';
+@import './message_list';
+
 body {
   font-family: Helvetica;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background-color: #DBDBDB;
+  height: 100vh;
+  display: flex;
+}
+
+.logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 50%;
+  background-color: rgb(40, 40, 40);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+
 }
