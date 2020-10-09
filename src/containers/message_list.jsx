@@ -24,25 +24,16 @@ class MessageList extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    if ( (this.props.messageList.messages != false && this.props.messageList.messages !== undefined) && (nextProps.messageList.messages != false && nextProps.messageList.messages !== undefined )) {
-      if (this.props.messageList.messages.length !== nextProps.messageList.messages.length) {
-        console.log('teste1')
-        return true;
-      } else return false;
-    } else {
-      console.log(nextProps.messageList.channel)
-      if (this.props.messageList.channel !== nextProps.messageList.channel) {
-        console.log('teste3')
-        return true;
-      }
-      console.log('teste4') 
-      return false;
+    if (this.props.messageList.messages) {
+      if (this.props.messageList.messages.length === nextProps.messageList.messages.length && this.props.messageList.channel === nextProps.messageList.channel ) {
+        return false;
+      } 
     }
+    return true;
   }
 
 
-  componentDidUpdate() {
-    
+  componentDidUpdate() { 
     this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
     this.props.hideSpinner();
   }

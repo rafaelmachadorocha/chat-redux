@@ -20,11 +20,11 @@ import '../assets/stylesheets/application.scss';
 const middleWares = applyMiddleware(reduxPromise);
 
 const reducers = combineReducers({
-  messageList: messageListReducer,
+  spinner: spinnerReducer,
   channelList: channelListReducer,
+  messageList: messageListReducer,
   selectedChannel: selectedChannelReducer,
-  userName: userNameReducer,
-  spinner: spinnerReducer
+  userName: userNameReducer
 });
 
 const initialState = {

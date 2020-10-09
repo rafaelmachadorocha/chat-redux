@@ -8,9 +8,9 @@ const App = () => {
   return (
     <div className="app d-flex">
        <div className="logo">R</div>
+       <Spinner />
        <ChannelList />
        <MessageList />
-       <Spinner />
        <MessageForm />
     </div>
   );
