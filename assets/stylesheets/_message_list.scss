@@ -12,6 +12,18 @@
   background-color: rgb(40, 40, 40);
   color: white;
   font-weight: bold;
+  width: 100px;
+  height: 34px;
+  @media (max-width: 768px) {
+    width: 80px;
+    font-size: 12px;
+  }
+}
+
+.btn-send:hover {
+  color: white !important;
+  background-color: rgb(20, 20, 20);
+  text-shadow: 0px 0px 1px white;
 }
 
 .message-form {
@@ -29,7 +41,7 @@
     width: calc(100% - 94px);
     margin-left: 94px;
   }
-  
+ 
 }
 
 .message-form textarea {
@@ -40,14 +52,6 @@
 
 }
 
-.message-form input[type="submit"] {
-  width: 100px;
-  height: 34px;
-  @media (max-width: 768px) {
-    width: 80px;
-    font-size: 12px;
-  }
-}
 
 .message {
   margin-left: 10px;
