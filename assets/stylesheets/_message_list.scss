@@ -2,8 +2,10 @@
   flex: 1 0 0;
   background-color: #FFFFFF;
   height: calc(100vh - 200px);
-  padding: 30px 0;
+  padding-bottom: 30px;
+  padding-top: 10px;
   overflow-y: scroll;
+  position: relative
 }
 
 .btn-send {
@@ -19,7 +21,10 @@
   margin-left: 256px;
   height: 200px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: white;
+  
 }
 
 .message-form textarea {
@@ -43,4 +48,14 @@
 
 .header {
   font-weight: bold;
+}
+
+.channel {
+  margin-left: .7em;
+  margin-top: .7em;
+  cursor: pointer;
+}
+
+.channel.active {
+  font-weight: bolder;
 }

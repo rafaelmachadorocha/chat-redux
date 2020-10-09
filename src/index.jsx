@@ -13,6 +13,7 @@ import messageListReducer from './reducers/message_list_reducer';
 import channelListReducer from './reducers/channel_list_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
 import userNameReducer from './reducers/user_name_reducer';
+import spinnerReducer from './reducers/spinner_reducer';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
@@ -22,14 +23,16 @@ const reducers = combineReducers({
   messageList: messageListReducer,
   channelList: channelListReducer,
   selectedChannel: selectedChannelReducer,
-  userName: userNameReducer
+  userName: userNameReducer,
+  spinner: spinnerReducer
 });
 
 const initialState = {
   messageList: [],
-  channelList: ['general', 'react', 'brazil'],
+  channelList: ['general', 'react', 'Brazil'],
   selectedChannel: 'general',
-  userName: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
+  userName: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
+  spinner: false
 }
 
 // render an instance of the component in the DOM

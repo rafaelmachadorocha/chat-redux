@@ -4,6 +4,8 @@ export const POST_MESSAGES = 'POST_MESSAGES';
 export const SET_CHANNELS = 'SET_CHANNELS';
 export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 export const SET_USER = 'SET_USER';
+export const DISPLAY_SPINNER = 'DISPLAY_SPINNER'
+export const HIDE_SPINNER = 'HIDE_SPINNER'
 
 export function fetchMessages(channel) {
   const url = `https://wagon-chat.herokuapp.com/${channel}/messages`;
@@ -52,6 +54,20 @@ export function setUserName(userName) {
   return {
     type: SET_USER,
     payload: userName
+  }
+}
+
+export function displaySpinner() {
+  return {
+    type: DISPLAY_SPINNER,
+    payload: true
+  }
+}
+
+export function hideSpinner() {
+  return {
+    type: HIDE_SPINNER,
+    payload: false
   }
 }
 

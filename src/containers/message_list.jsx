@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { fetchMessages } from '../actions';
+import { fetchMessages, hideSpinner } from '../actions';
 import Message from '../components/message';
+import Spinner from '../containers/spinner';
 
 class MessageList extends Component {
   constructor(props) {
@@ -17,44 +18,45 @@ class MessageList extends Component {
 
 
   componentDidMount = () => {
-    setInterval(() => {
+    this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
+    return setInterval(() => {
       this.props.fetchMessages(this.props.selectedChannel);
     }, 2000);
-    this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
   }
 
   shouldComponentUpdate(nextProps) {
     if (this.props.messageList.messages) {
-      return this.props.messageList.messages.length !== nextProps.messageList.messages.length
+      return this.props.messageList.messages.length !== nextProps.messageList.messages.length;
     } 
     return true;
   }
 
   componentDidUpdate() {
     this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
+    this.props.hideSpinner();
   }
 
   componentWillUnmount() {
-    clearInterval();
+    clearInterval(this.componentDidMount());
   }
 
   render() {
     if (this.props.messageList.messages) {
       return (
-          <div className="message-list" ref={this.containerRef}>
-            {this.props.messageList.messages.map( ({ id, author, content, created_at }) => <Message key={id} author={author} content={content} createdAt={created_at} />)}
-          </div>
-      )
-    } else return (
-      <div className="message-list" ref={this.containerRef}>     
-      </div>
-    )
+        <div className="message-list" ref={this.containerRef}>
+          <Spinner />
+          {this.props.messageList.messages.map( ({ id, author, content, created_at }) => <Message key={id} author={author} content={content} createdAt={created_at} />)}
+        </div>
+      );
+    } 
+    return <div className="message-list" ref={this.containerRef} />;
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    fetchMessages: fetchMessages
+    fetchMessages: fetchMessages,
+    hideSpinner: hideSpinner
   }, dispatch);
 }
 

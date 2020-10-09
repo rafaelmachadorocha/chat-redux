@@ -1,0 +1,22 @@
+.spinner {
+  border-top: 3px solid lightseagreen;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  animation: rotate 1s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.display-none {
+  display: none;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
