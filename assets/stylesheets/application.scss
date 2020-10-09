@@ -5,6 +5,9 @@
 
 body {
   font-family: Helvetica;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 .app {
   background-color: #DBDBDB;
