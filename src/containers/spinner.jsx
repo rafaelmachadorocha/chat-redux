@@ -7,9 +7,7 @@ import { hideSpinner } from '../actions';
 class Spinner extends Component {
 
   componentWillUpdate() {
-    clearTimeout(this.componentWillUpdate());
-    const id = setTimeout(() => {this.props.hideSpinner();}, 3000);
-    return id;
+    setTimeout(() => {this.props.hideSpinner();}, 3000);
   }
 
   render() {
