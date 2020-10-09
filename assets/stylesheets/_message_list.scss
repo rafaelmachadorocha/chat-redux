@@ -38,6 +38,7 @@
   background-color: white;
 
   @media (max-width: 768px) {
+    height: 150px;
     width: calc(100% - 94px);
     margin-left: 94px;
   }
