@@ -57,6 +57,7 @@
 
 .header {
   font-weight: bold;
+  margin-bottom: .3em;
 }
 
 .channel {
@@ -67,4 +68,8 @@
 
 .channel.active {
   font-weight: bolder;
+}
+
+.time {
+  color: rgb(150, 150, 150);
 }

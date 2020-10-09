@@ -6,8 +6,10 @@ import { hideSpinner } from '../actions';
 
 class Spinner extends Component {
 
-  componentWillUpdate() {
-    setTimeout(() => {this.props.hideSpinner();}, 3000);
+  UNSAFE_componentWillUpdate() {
+    setTimeout(() => {
+      this.props.hideSpinner();
+    }, 3000);
   }
 
   render() {
