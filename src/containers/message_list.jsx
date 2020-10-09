@@ -25,9 +25,10 @@ class MessageList extends Component {
 
   shouldComponentUpdate(nextProps) {
     if (this.props.messageList.messages) {
-      if (this.props.messageList.messages.length === nextProps.messageList.messages.length && this.props.messageList.channel === nextProps.messageList.channel ) {
+      if (this.props.messageList.messages.length === nextProps.messageList.messages.length
+        && this.props.messageList.channel === nextProps.messageList.channel) {
         return false;
-      } 
+      }
     }
     return true;
   }
