@@ -13,7 +13,7 @@ class MessageList extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    this.props.fetchMessages(this.props.selectedChannel)
+    this.props.fetchMessages(this.props.selectedChannel);
   }
 
 
