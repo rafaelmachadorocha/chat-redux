@@ -5,11 +5,9 @@ import { selectChannel, fetchMessages, displaySpinner, hideSpinner } from '../ac
 
 class ChannelList extends Component {
   handleClick = (event) => {
-    clearTimeout();
     this.props.selectChannel(event.currentTarget.textContent.replace("#", ""));
     this.props.displaySpinner();
     this.props.fetchMessages(this.props.selectedChannel);
-    
   }
 
   render() {

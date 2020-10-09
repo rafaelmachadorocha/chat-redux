@@ -7,11 +7,13 @@ import { hideSpinner } from '../actions';
 class Spinner extends Component {
 
   componentWillUpdate() {
-    return setTimeout(() => {this.props.hideSpinner();}, 3000);
+    clearTimeout(this.componentWillUpdate());
+    const id = setTimeout(() => {this.props.hideSpinner();}, 3000);
+    return id;
   }
 
   render() {
-    let classes ="spinner"
+    let classes = 'spinner';
     if (!this.props.spinner) {
       classes += ' display-none';
     }
