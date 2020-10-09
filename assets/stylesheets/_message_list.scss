@@ -34,12 +34,12 @@
   height: 200px;
   padding-bottom: 10px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 16px;
   background-color: white;
 
   @media (max-width: 768px) {
-    height: 150px;
     width: calc(100% - 94px);
+    padding-left: 16px;
     margin-left: 94px;
     padding-bottom: 0;
   }
