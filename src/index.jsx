@@ -31,7 +31,7 @@ const initialState = {
   messageList: [],
   channelList: ['general', 'react', 'Brazil'],
   selectedChannel: 'general',
-  userName: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
+  userName: prompt("Enter your username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
   spinner: false
 }
 

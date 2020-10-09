@@ -21,7 +21,7 @@ class MessageForm extends Component {
     return(
       <form className="message-form">
         <textarea ref={this.textAreaRef} />
-        <input type="submit" onClick={this.submitForm} className="btn btn-send"/>
+        <input type="submit" value="Send" onClick={this.submitForm} className="btn btn-send" />
       </form>
     )
   }
