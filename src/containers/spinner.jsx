@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { hideSpinner } from '../actions';
-
 
 class Spinner extends Component {
-
-  UNSAFE_componentWillUpdate() {
-    setTimeout(() => {
-      this.props.hideSpinner();
-    }, 3000);
-  }
 
   render() {
     let classes = 'spinner';
@@ -32,11 +23,5 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    hideSpinner: hideSpinner
-  }, dispatch)
-}
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Spinner);
+export default connect(mapStateToProps)(Spinner);

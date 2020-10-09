@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { selectChannel, fetchMessages, displaySpinner, hideSpinner } from '../actions';
+import { selectChannel, fetchMessages, displaySpinner } from '../actions';
 
 class ChannelList extends Component {
   handleClick = (event) => {
@@ -24,7 +24,6 @@ function mapDispatchToProps(dispatch) {
     selectChannel: selectChannel,
     fetchMessages: fetchMessages,
     displaySpinner: displaySpinner,
-    hideSpinner: hideSpinner
   }, dispatch);
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelList from '../containers/channel_list';
 import MessageList from '../containers/message_list';
 import MessageForm from '../containers/message_form';
+import Spinner from '../containers/spinner';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
        <div className="logo">R</div>
        <ChannelList />
        <MessageList />
+       <Spinner />
        <MessageForm />
     </div>
   );

@@ -9,7 +9,6 @@ export const HIDE_SPINNER = 'HIDE_SPINNER'
 
 export function fetchMessages(channel) {
   const url = `https://wagon-chat.herokuapp.com/${channel}/messages`;
-
   const promise = fetch(url).then(response => response.json());
   return {
     type: FETCH_MESSAGES,
