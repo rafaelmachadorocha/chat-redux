@@ -5,9 +5,12 @@ import { selectChannel, fetchMessages, displaySpinner } from '../actions';
 
 class ChannelList extends Component {
   handleClick = (event) => {
-    this.props.selectChannel(event.currentTarget.textContent.replace("#", ""));
-    this.props.displaySpinner();
+    const clickedChannel = event.currentTarget.textContent.replace("#", "");
+    this.props.selectChannel(clickedChannel);
     this.props.fetchMessages(this.props.selectedChannel);
+    if (this.props.selectedChannel !== clickedChannel) {
+      this.props.displaySpinner();
+    }
   }
 
   render() {
