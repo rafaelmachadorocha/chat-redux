@@ -2,5 +2,12 @@
   height: 100vh;
   flex: 0 0 176px;
   background-color: #F4F4F4;
+  padding-top: 2px;
   margin-left: 80px;
+  @media (max-width: 411px) {
+    padding-top: 2px;
+    flex: 0 0 64px;
+    font-size: 12px;
+    margin-left: 30px;
+  }
 }
