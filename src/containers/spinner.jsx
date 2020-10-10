@@ -8,13 +8,11 @@ class Spinner extends Component {
     if (!this.props.spinner) {
       classes += ' display-none';
     }
-
     return (
       <div className={classes}>
       </div>
     )
   }
-
 }
 
 function mapStateToProps(state) {
@@ -22,6 +20,5 @@ function mapStateToProps(state) {
    spinner: state.spinner
   };
 }
-
 
 export default connect(mapStateToProps)(Spinner);

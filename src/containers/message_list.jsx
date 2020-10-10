@@ -7,7 +7,6 @@ import Message from '../components/message';
 class MessageList extends Component {
   constructor(props) {
     super(props);
-    // create a ref to store the textInput DOM element
     this.containerRef = React.createRef();
   }
 
@@ -32,7 +31,6 @@ class MessageList extends Component {
     }
     return true;
   }
-
 
   componentDidUpdate() { 
     this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
