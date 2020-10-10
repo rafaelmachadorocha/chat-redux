@@ -17,13 +17,22 @@ class MessageForm extends Component {
     this.textAreaRef.current.focus();
   }
 
+  submitFormWithKeyDown = (event) => { 
+    if (event.charCode === 13) {
+      event.preventDefault();
+      this.props.postMessage(this.props.selectedChannel, this.props.userName, this.textAreaRef.current.value);
+      this.textAreaRef.current.value = "";
+      this.textAreaRef.current.focus();
+    }
+  }
+
   render() { 
-    return(
+    return (
       <form className="message-form">
-        <textarea ref={this.textAreaRef} />
+        <textarea ref={this.textAreaRef} onKeyPress={this.submitFormWithKeyDown} tabIndex="0" />
         <input type="submit" value="Send" onClick={this.submitForm} className="btn btn-send" />
       </form>
-    )
+    );
   }
 }
 
