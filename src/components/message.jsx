@@ -22,7 +22,7 @@ class Message extends Component {
     let hour = Number.parseInt(groups[1]);
     const timeZone = new Date().getTimezoneOffset() / 60
     if (timeZone >= 0 && hour - timeZone < 0) {
-      hour = 12 - (hour - timeZone);
+      hour = 24 + (hour - timeZone);
     } else if (timeZone <= 0 && hour - timeZone >= 24) {
       hour = (hour - timeZone) % 24;
     } else {
