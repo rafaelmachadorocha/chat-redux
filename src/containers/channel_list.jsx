@@ -14,9 +14,10 @@ class ChannelList extends Component {
   }
 
   render() {
+    const { selectedChannel } = this.props; 
     return (
       <div className="channel-list">
-       {this.props.channelList.map(channel => <p key={channel} className={channel === this.props.selectedChannel ? "channel active" : "channel"} channel={channel} onClick={this.handleClick}>#{channel}</p>)}
+        {this.props.channelList.map(channel => <p key={channel} className={channel === selectedChannel ? "channel active" : "channel"} channel={channel} onClick={this.handleClick}>#{channel}</p>)}
       </div>
     )
   }
@@ -24,9 +25,9 @@ class ChannelList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    selectChannel: selectChannel,
-    fetchMessages: fetchMessages,
-    displaySpinner: displaySpinner,
+    selectChannel,
+    fetchMessages,
+    displaySpinner,
   }, dispatch);
 }
 

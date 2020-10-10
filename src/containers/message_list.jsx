@@ -58,8 +58,8 @@ class MessageList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    fetchMessages: fetchMessages,
-    hideSpinner: hideSpinner
+    fetchMessages,
+    hideSpinner
   }, dispatch);
 }
 

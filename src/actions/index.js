@@ -18,12 +18,12 @@ export function fetchMessages(channel) {
 
 export function postMessage(channel, author, content) {
   const url = `https://wagon-chat.herokuapp.com/${channel}/messages`;
-  const body = { channel, author, content }
-  const promise = fetch(url, 
+  const body = { channel, author, content };
+  const promise = fetch(url,
     {
-      method: 'POST', 
+      method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)

@@ -35,11 +35,12 @@ class Message extends Component {
   }
 
   render() {
-    const color = this.intToRGB(this.hashCode(this.props.author))
+    const color = this.intToRGB(this.hashCode(this.props.author));
+    const { author, createdAt, content } = this.props;
     return (
       <div className="message">
-        <p className="header"><span className="author" style={{color: `#${color}`}}>{this.props.author}</span> - <small className="time">{this.formatTime(this.props.createdAt)}</small></p>
-        <p className="content">{this.props.content}</p>
+        <p className="header"><span className="author" style={{ color: `#${color}` }}>{author}</span> - <small className="time">{this.formatTime(createdAt)}</small></p>
+        <p className="content">{content}</p>
       </div>
     );
   }
