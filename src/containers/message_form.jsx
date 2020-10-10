@@ -18,7 +18,7 @@ class MessageForm extends Component {
   }
 
   submitFormWithKeyDown = (event) => { 
-    if (event.charCode === 13) {
+    if (event.charCode === 13 && !event.shiftKey) {
       event.preventDefault();
       this.props.postMessage(this.props.selectedChannel, this.props.userName, this.textAreaRef.current.value);
       this.textAreaRef.current.value = "";
