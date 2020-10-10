@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Message extends Component {
 
-  _hashCode = (str) => {
+  hashCode = (str) => {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
       // eslint-disable-next-line no-bitwise
@@ -11,13 +11,13 @@ class Message extends Component {
     return hash;
   }
 
-  _intToRGB = (i) => {
+  intToRGB = (i) => {
     // eslint-disable-next-line no-bitwise
     const c = (i & 0x00FFFFFF).toString(16).toUpperCase();
     return "00000".substring(0, 6 - c.length) + c;
   }
 
-  _formatTime = (time) => {
+  formatTime = (time) => {
     const groups = time.match(/(?:[A-Z])(\d{2})(:\d{2}:\d{2})/);
     let hour = Number.parseInt(groups[1], 10);
     const timeZone = new Date().getTimezoneOffset() / 60
@@ -35,10 +35,10 @@ class Message extends Component {
   }
 
   render() {
-    const color = this._intToRGB(this._hashCode(this.props.author))
+    const color = this.intToRGB(this.hashCode(this.props.author))
     return (
       <div className="message">
-        <p className="header"><span className="author" style={{color: `#${color}`}}>{this.props.author}</span> - <small className="time">{this._formatTime(this.props.createdAt)}</small></p>
+        <p className="header"><span className="author" style={{color: `#${color}`}}>{this.props.author}</span> - <small className="time">{this.formatTime(this.props.createdAt)}</small></p>
         <p className="content">{this.props.content}</p>
       </div>
     );
