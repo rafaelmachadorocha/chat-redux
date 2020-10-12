@@ -17,7 +17,7 @@ import spinnerReducer from './reducers/spinner_reducer';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
-const middleWares = applyMiddleware(logger, reduxPromise);
+const middleWares = applyMiddleware(reduxPromise);
 
 const reducers = combineReducers({
   spinner: spinnerReducer,
