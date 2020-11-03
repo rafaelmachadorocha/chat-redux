@@ -14,8 +14,6 @@ class MessageForm extends Component {
     const { channelFromParams, userName } = this.props;
     const { value } = this.textAreaRef.current;
     event.preventDefault();
-    console.log(value)
-    console.log(channelFromParams)
     this.props.postMessage(channelFromParams, userName, value);
     this.textAreaRef.current.value = "";
     this.textAreaRef.current.focus();
