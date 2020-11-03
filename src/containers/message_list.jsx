@@ -11,14 +11,14 @@ class MessageList extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    this.props.fetchMessages(this.props.selectedChannel);
+    this.props.fetchMessages(this.props.channelFromParams);
   }
 
 
   componentDidMount = () => {
     this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
     return setInterval(() => {
-      this.props.fetchMessages(this.props.selectedChannel);
+      this.props.fetchMessages(this.props.channelFromParams);
     }, 2000);
   }
 
@@ -45,10 +45,13 @@ class MessageList extends Component {
     if (this.props.messageList.messages) {
       return (
         <div className="message-list" ref={this.containerRef}>
+          <h2 className="channel-title">
+            Channel#{this.props.channelFromParams}
+          </h2>
           {this.props.messageList.messages.map( ({ id, author, content, created_at }) => <Message key={id} author={author} content={content} createdAt={created_at} />)}
         </div>
       );
-    } 
+    }
     return ( 
       <div className="message-list" ref={this.containerRef}>
       </div>
@@ -66,7 +69,6 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     messageList: state.messageList,
-    selectedChannel: state.selectedChannel
   }
 }
 

@@ -2,7 +2,6 @@
   flex: 1 0 0;
   background-color: #FFFFFF;
   height: calc(100vh - 200px);
-  padding-top: 16px;
   overflow-y: scroll;
   position: relative
 }
@@ -70,16 +69,17 @@
   margin-bottom: .3em;
 }
 
-.channel {
-  margin-left: .7em;
-  margin-top: .7em;
-  cursor: pointer;
-}
-
-.channel.active {
-  font-weight: bolder;
-}
-
 .time {
   color: rgb(150, 150, 150);
+}
+
+.channel-title {
+  padding-left: .4em;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: .3em;
+  margin-top: .3em;
+  margin-bottom: .7em;
+  @media (max-width: 768px) {
+    font-size: 1.8em;
+   }
 }

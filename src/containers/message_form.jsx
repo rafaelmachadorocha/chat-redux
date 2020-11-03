@@ -11,20 +11,20 @@ class MessageForm extends Component {
   }
 
   submitForm = (event) => {
-    const { selectedChannel, userName } = this.props;
+    const { channelFromParams, userName } = this.props;
     const { value } = this.textAreaRef.current;
     event.preventDefault();
-    this.props.postMessage(selectedChannel, userName, value);
+    this.props.postMessage(channelFromParams, userName, value);
     this.textAreaRef.current.value = "";
     this.textAreaRef.current.focus();
   }
 
   submitFormWithKeyDown = (event) => {
-    const { selectedChannel, userName } = this.props;
+    const { channelFromParams, userName } = this.props;
     const { value } = this.textAreaRef.current;
     if (event.charCode === 13 && !event.shiftKey) {
       event.preventDefault();
-      this.props.postMessage(selectedChannel, userName, value);
+      this.props.postMessage(channelFromParams, userName, value);
       this.textAreaRef.current.value = "";
       this.textAreaRef.current.focus();
     }
@@ -42,13 +42,12 @@ class MessageForm extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    postMessage: postMessage
+    postMessage
   }, dispatch)
 }
 
 function mapStateToProps(state) {
   return {
-    selectedChannel: state.selectedChannel,
     userName: state.userName
   }
 }
