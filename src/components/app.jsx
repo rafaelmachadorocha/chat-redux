@@ -9,9 +9,9 @@ const App = (props) => {
     <div className="app d-flex">
       <div className="logo">R</div>
       <Spinner />
-      <ChannelList channelFromParams={this.props.match.params.channel} />
-      <MessageList channelFromParams={this.props.match.params.channel} />
-      <MessageForm channelFromParams={this.props.match.params.channel} />
+      <ChannelList channelFromParams={props.match.params.channel} />
+      <MessageList channelFromParams={props.match.params.channel} />
+      <MessageForm channelFromParams={props.match.params.channel} />
     </div>
   );
 };

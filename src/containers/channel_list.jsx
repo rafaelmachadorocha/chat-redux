@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { selectChannel, fetchMessages, displaySpinner } from '../actions';
+import { Link } from 'react-router-dom';
+import { fetchMessages, displaySpinner } from '../actions';
+
 
 class ChannelList extends Component {
-  handleClick = (event) => {
-    const clickedChannel = event.currentTarget.textContent.replace("#", "");
-    this.props.selectChannel(clickedChannel);
-    this.props.fetchMessages(this.props.channelFromParams);
-    if (this.props.channelFromParams !== clickedChannel) {
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (this.props.channelFromParams !== nextProps.channelFromParams) {
+      this.props.fetchMessages(nextProps.channelFromParams);
       this.props.displaySpinner();
     }
   }
 
-  render() {
-    const { channelFromParams } = this.props; 
+  renderChannel = (channel) => {
+    const { channelFromParams } = this.props;
+    console.log(channelFromParams)
     return (
-      <div className="channel-list">
-        {this.props.channelList.map(channel => <p key={channel} className={channel === channelFromParams ? "channel active" : "channel"} channel={channel} onClick={this.handleClick}>#{channel}</p>)}
+      <li
+        key={channel}
+        className={channel === channelFromParams ? "channel active" : "channel"}
+        channel={channel}
+      >
+        <Link to={`/${channel}`}>
+          #{channel}
+        </Link>
+      </li>
+    );
+  }
+
+  render() {
+    return (
+      <div className="channel-list-div">
+        <ul className="channel-list">
+          {this.props.channelList.map(this.renderChannel)}
+        </ul>
       </div>
-    )
+    );
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    selectChannel,
     fetchMessages,
     displaySpinner,
   }, dispatch);

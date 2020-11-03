@@ -1,9 +1,10 @@
-.channel-list {
+.channel-list-div {
   height: 100vh;
   flex: 0 0 176px;
   background-color: #F4F4F4;
   padding-top: 8px;
   margin-left: 80px;
+  padding-left: 0;
   @media (max-width: 768px) {
     padding-top: 8px;
     flex: 0 0 64px;
@@ -11,3 +12,31 @@
     margin-left: 30px;
   }
 }
+
+.channel-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.channel {
+  margin-left: .7em;
+  margin-top: .7em;
+  cursor: pointer;
+}
+
+.channel.active {
+  font-weight: bolder;  
+}
+
+.channel a {
+  color: black;
+  text-decoration: none;
+}
+
+.channel a:hover {
+  text-decoration: none;
+}
+
+
+
+
