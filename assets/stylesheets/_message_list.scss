@@ -2,7 +2,6 @@
   flex: 1 0 0;
   background-color: #FFFFFF;
   height: calc(100vh - 200px);
-  padding-top: 16px;
   overflow-y: scroll;
   position: relative
 }
@@ -72,4 +71,12 @@
 
 .time {
   color: rgb(150, 150, 150);
+}
+
+.channelTitle {
+  margin-left: 10px;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

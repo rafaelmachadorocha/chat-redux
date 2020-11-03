@@ -45,10 +45,13 @@ class MessageList extends Component {
     if (this.props.messageList.messages) {
       return (
         <div className="message-list" ref={this.containerRef}>
+          <h2 className ="channelTitle">
+            Channel#{this.props.channelFromParams}
+          </h2>
           {this.props.messageList.messages.map( ({ id, author, content, created_at }) => <Message key={id} author={author} content={content} createdAt={created_at} />)}
         </div>
       );
-    } 
+    }
     return ( 
       <div className="message-list" ref={this.containerRef}>
       </div>
