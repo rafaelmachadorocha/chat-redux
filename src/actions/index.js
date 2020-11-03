@@ -2,7 +2,7 @@
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const POST_MESSAGES = 'POST_MESSAGES';
 export const SET_CHANNELS = 'SET_CHANNELS';
-export const SELECT_CHANNEL = 'SELECT_CHANNEL';
+// export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 export const SET_USER = 'SET_USER';
 export const DISPLAY_SPINNER = 'DISPLAY_SPINNER'
 export const HIDE_SPINNER = 'HIDE_SPINNER'
@@ -42,12 +42,12 @@ export function setChannels() {
   }
 }
 
-export function selectChannel(channel) {
-  return {
-    type: SELECT_CHANNEL,
-    payload: channel
-  }
-}
+// export function selectChannel(channel) {
+//   return {
+//     type: SELECT_CHANNEL,
+//     payload: channel
+//   }
+// }
 
 export function setUserName(userName) {
   return {

@@ -79,4 +79,7 @@
   padding-bottom: .3em;
   margin-top: .3em;
   margin-bottom: .7em;
+  @media (max-width: 768px) {
+    font-size: 1.8em;
+   }
 }
