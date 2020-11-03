@@ -7,17 +7,17 @@ class ChannelList extends Component {
   handleClick = (event) => {
     const clickedChannel = event.currentTarget.textContent.replace("#", "");
     this.props.selectChannel(clickedChannel);
-    this.props.fetchMessages(this.props.selectedChannel);
-    if (this.props.selectedChannel !== clickedChannel) {
+    this.props.fetchMessages(this.props.channelFromParams);
+    if (this.props.channelFromParams !== clickedChannel) {
       this.props.displaySpinner();
     }
   }
 
   render() {
-    const { selectedChannel } = this.props; 
+    const { channelFromParams } = this.props; 
     return (
       <div className="channel-list">
-        {this.props.channelList.map(channel => <p key={channel} className={channel === selectedChannel ? "channel active" : "channel"} channel={channel} onClick={this.handleClick}>#{channel}</p>)}
+        {this.props.channelList.map(channel => <p key={channel} className={channel === channelFromParams ? "channel active" : "channel"} channel={channel} onClick={this.handleClick}>#{channel}</p>)}
       </div>
     )
   }
@@ -33,7 +33,6 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    selectedChannel: state.selectedChannel,
     channelList: state.channelList
   }
 }

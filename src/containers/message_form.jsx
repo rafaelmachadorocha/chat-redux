@@ -42,13 +42,12 @@ class MessageForm extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    postMessage: postMessage
+    postMessage
   }, dispatch)
 }
 
 function mapStateToProps(state) {
   return {
-    selectedChannel: state.selectedChannel,
     userName: state.userName
   }
 }

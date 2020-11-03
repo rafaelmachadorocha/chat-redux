@@ -4,14 +4,14 @@ import MessageList from '../containers/message_list';
 import MessageForm from '../containers/message_form';
 import Spinner from '../containers/spinner';
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="app d-flex">
-       <div className="logo">R</div>
-       <Spinner />
-       <ChannelList />
-       <MessageList />
-       <MessageForm />
+      <div className="logo">R</div>
+      <Spinner />
+      <ChannelList channelFromParams={this.props.match.params.channel} />
+      <MessageList channelFromParams={this.props.match.params.channel} />
+      <MessageForm channelFromParams={this.props.match.params.channel} />
     </div>
   );
 };

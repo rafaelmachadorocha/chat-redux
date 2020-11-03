@@ -11,14 +11,14 @@ class MessageList extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    this.props.fetchMessages(this.props.selectedChannel);
+    this.props.fetchMessages(this.props.channelFromParams);
   }
 
 
   componentDidMount = () => {
     this.containerRef.current.scrollTop = this.containerRef.current.scrollHeight;
     return setInterval(() => {
-      this.props.fetchMessages(this.props.selectedChannel);
+      this.props.fetchMessages(this.props.channelFromParams);
     }, 2000);
   }
 
@@ -66,7 +66,6 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     messageList: state.messageList,
-    selectedChannel: state.selectedChannel
   }
 }
 
