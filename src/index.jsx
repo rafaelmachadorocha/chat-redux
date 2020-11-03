@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 
 
@@ -19,7 +19,7 @@ import spinnerReducer from './reducers/spinner_reducer';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
-const middleWares = applyMiddleware(reduxPromise, logger);
+const middleWares = applyMiddleware(reduxPromise);
 
 const reducers = combineReducers({
   spinner: spinnerReducer,
@@ -35,7 +35,7 @@ const initialState = {
   // selectedChannel: 'general',
   userName: prompt("Enter your username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
   spinner: false
-}
+};
 
 // render an instance of the component in the DOM
 ReactDOM.render(
