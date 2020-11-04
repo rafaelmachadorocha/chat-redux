@@ -53,8 +53,7 @@ class MessageList extends Component {
       );
     }
     return ( 
-      <div className="message-list" ref={this.containerRef}>
-      </div>
+      <div className="message-list" ref={this.containerRef} />
     );
   }
 }
@@ -69,7 +68,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     messageList: state.messageList,
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
