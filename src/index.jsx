@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route path="/:channel" component={App} />
         <Redirect from="/" to="/general" />
       </Switch>
-    </Router> 
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
